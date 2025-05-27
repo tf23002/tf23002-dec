@@ -31,10 +31,19 @@ En este caso, se realiza una división entre dos números enteros definidos como
 
 A continuación se presentan los comandos para compilar y ejecutar cualquiera de los programas, suponiendo que se utiliza NASM y ld en un entorno Linux:
 
-```bash
-nasm -f elf32 nombre_archivo.asm -o nombre_archivo.o
-ld -m elf_i386 nombre_archivo.o -o nombre_archivo
-./nombre_archivo
+sudo apt install nasm gcc-multilib
 
-Autor
-carnet: tf23002
+nasm -f elf32 resta3.asm -o resta3.o
+ld -m elf_i386 -o resta3 resta3.o
+./resta3
+echo $?
+
+nasm -f elf32 multiplicacion.asm -o multiplicacion.o
+ld -m elf_i386 -o multiplicacion multiplicacion.o
+./multiplicacion
+echo $?
+
+nasm -f elf32 division.asm -o division.o
+ld -m elf_i386 -o division division.o
+./division
+echo $?
